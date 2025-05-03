@@ -1,6 +1,9 @@
 import type { Metadata } from 'next';
 import { Outfit } from 'next/font/google';
+
 import { ClerkProvider } from '@clerk/nextjs';
+
+import Provider from '@/app/provider';
 import './globals.css';
 
 const outfit = Outfit({
@@ -20,7 +23,9 @@ export default function RootLayout({
   return (
     <ClerkProvider>
       <html lang="en">
-        <body className={`${outfit.className} antialiased`}>{children}</body>
+        <body className={`${outfit.className} antialiased`}>
+          <Provider>{children}</Provider>
+        </body>
       </html>
     </ClerkProvider>
   );
