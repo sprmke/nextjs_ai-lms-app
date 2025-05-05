@@ -1,50 +1,28 @@
-import React from 'react';
+'use client';
+import React, { useEffect } from 'react';
+import { useUser } from '@clerk/nextjs';
 
-import { eq } from 'drizzle-orm';
-import { currentUser } from '@clerk/nextjs/server';
+import axios from 'axios';
 
-import { db } from './config/db';
-import { USER_TABLE } from './config/schema';
-
-export default async function Provider({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
-  const user = await currentUser();
+export default function Provider({ children }: { children: React.ReactNode }) {
+  const { user } = useUser();
 
   console.log('user::', user);
 
-  const { username, firstName, emailAddresses } = user ?? {};
-  const [firstEmailAddress] = emailAddresses ?? [];
-  const { emailAddress: email } = firstEmailAddress ?? {};
+  const checkIsNewUser = async () => {
+    const response = await axios.post('/api/create-user', {
+      user,
+    });
 
-  console.log('email::', email);
+    console.log('response::', response);
+  };
 
-  // Check if user already exists
-  const existingUsers = email
-    ? await db.select().from(USER_TABLE).where(eq(USER_TABLE.email, email))
-    : null;
+  useEffect(() => {
+    if (!user) return;
+    checkIsNewUser();
 
-  console.log('existingUsers::', existingUsers);
-
-  // If not, add to database
-  if (!existingUsers?.length) {
-    const newUser = await db
-      .insert(USER_TABLE)
-      .values({
-        email,
-        userName: username ?? firstName ?? '',
-      })
-      .returning({
-        id: USER_TABLE.id,
-        userName: USER_TABLE.userName,
-        email: USER_TABLE.email,
-        isMember: USER_TABLE.isMember,
-      });
-
-    console.log('newUser::', newUser);
-  }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [user]);
 
   return <div>{children}</div>;
 }
