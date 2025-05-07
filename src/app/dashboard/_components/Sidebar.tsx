@@ -41,7 +41,9 @@ function Sidebar() {
           <h2 className="text-2xl font-bold">AI LMS</h2>
         </div>
         <div className="flex flex-col gap-y-3">
-          <Button className="w-full">+ Create New</Button>
+          <Link href="/create">
+            <Button className="w-full">+ Create New</Button>
+          </Link>
           <div className="flex flex-col gap-y-3">
             {menuList.map((menu, index) => (
               <div
