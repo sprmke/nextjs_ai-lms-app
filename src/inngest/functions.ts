@@ -2,7 +2,7 @@ import { eq } from 'drizzle-orm';
 import { inngest } from '@/inngest/client';
 
 import { db } from '@/app/config/db';
-import { USER_TABLE } from '@/app/config/schema';
+import { USERS_TABLE } from '@/app/config/schema';
 
 export const helloWorld = inngest.createFunction(
   { id: 'hello-world' },
@@ -29,24 +29,24 @@ export const createNewUser = inngest.createFunction(
         // Check if user already exists
         const existingUsers = await db
           .select()
-          .from(USER_TABLE)
-          .where(eq(USER_TABLE.email, email));
+          .from(USERS_TABLE)
+          .where(eq(USERS_TABLE.email, email));
 
         console.log('existingUsers::', existingUsers);
 
         // If not, add to database
         if (!existingUsers?.length) {
           const newUser = await db
-            .insert(USER_TABLE)
+            .insert(USERS_TABLE)
             .values({
               email,
               userName: username ?? firstName ?? 'Anonymous',
             })
             .returning({
-              id: USER_TABLE.id,
-              userName: USER_TABLE.userName,
-              email: USER_TABLE.email,
-              isMember: USER_TABLE.isMember,
+              id: USERS_TABLE.id,
+              userName: USERS_TABLE.userName,
+              email: USERS_TABLE.email,
+              isMember: USERS_TABLE.isMember,
             });
 
           console.log('newUser::', newUser);
