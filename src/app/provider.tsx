@@ -22,7 +22,7 @@ export default function Provider({ children }: { children: React.ReactNode }) {
     checkIsNewUser();
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [user]);
+  }, []);
 
   return <div>{children}</div>;
 }
