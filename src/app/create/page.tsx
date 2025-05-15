@@ -2,10 +2,14 @@
 
 import React, { useState } from 'react';
 
-import { Button } from '@/components/ui/button';
-import SelectOption from './_components/SelectOption';
+import axios from 'axios';
+import { v4 as uuidv4 } from 'uuid';
 import { Loader } from 'lucide-react';
+import { useUser } from '@clerk/nextjs';
+
+import SelectOption from './_components/SelectOption';
 import TopicInput from './_components/TopicInput';
+import { Button } from '@/components/ui/button';
 
 type FormData = {
   topic: string;
@@ -14,6 +18,8 @@ type FormData = {
 };
 
 function CreatePage() {
+  const { user } = useUser();
+
   const [step, setStep] = useState(0);
   const [isLoading, setIsLoading] = useState(false);
   const [formData, setFormData] = useState<FormData>({
@@ -30,7 +36,17 @@ function CreatePage() {
 
     console.log(formData);
   };
-  const generateCourseOutline = () => {};
+
+  // Save user input and generate AI course outline
+  const generateCourseOutline = async () => {
+    const courseOutline = await axios.post('/api/generate-course-outline', {
+      courseId: uuidv4(),
+      ...formData,
+      createdBy: user?.primaryEmailAddress?.emailAddress,
+    });
+
+    console.log(courseOutline);
+  };
 
   return (
     <div className="flex flex-col items-center p-5 md:px-24 lg:px-36 mt-20">
