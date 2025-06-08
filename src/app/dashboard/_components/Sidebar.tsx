@@ -10,6 +10,7 @@ import Link from 'next/link';
 function Sidebar() {
   const pathname = usePathname();
 
+  // Dashboard menu list
   const menuList = [
     {
       name: 'Dashboard',

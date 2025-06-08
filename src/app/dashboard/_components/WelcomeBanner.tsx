@@ -10,7 +10,7 @@ export default async function WelcomeBanner() {
       <Image src="/logo.svg" alt="logo" width={40} height={40} />
       <div>
         <h3 className="font-bold text-3xl">Hello, {user?.fullName}</h3>
-        <p className="text-lg">Welcome back! Let&apos;s continue learning!</p>
+        <p className="text-lg">Let&apos;s continue learning!</p>
       </div>
     </div>
   );
