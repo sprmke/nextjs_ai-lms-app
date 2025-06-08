@@ -337,6 +337,7 @@ export async function sendMessage(modelConfig: ModelConfig, prompt: string) {
 
   while (retryCount < maxRetries) {
     try {
+      // Generate content stream
       const response = await ai.models.generateContentStream({
         model: modelConfig.model,
         config: modelConfig.config,
