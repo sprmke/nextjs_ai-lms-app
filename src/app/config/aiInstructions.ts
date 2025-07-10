@@ -300,7 +300,7 @@ This systematic approach ensures all requirements are met, the difficulty level 
   },
 ];
 
-export const generateCourseOutline = (
+export const generateCourseOutlinePrompt = (
   topic: string,
   courseType: string,
   difficultyLevel: string

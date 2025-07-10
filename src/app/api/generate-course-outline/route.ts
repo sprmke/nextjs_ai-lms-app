@@ -1,4 +1,4 @@
-import { generateCourseOutline } from '@/app/config/aiInstructions';
+import { generateCourseOutlinePrompt } from '@/app/config/aiInstructions';
 import { courseOutlineAIModel, sendMessage } from '@/app/config/aiModel';
 import { db } from '@/app/config/db';
 import { STUDY_MATERIALS_TABLE } from '@/app/config/schema';
@@ -9,7 +9,11 @@ export async function POST(req: NextRequest) {
     await req.json();
 
   // Generate course outline using AI
-  const prompt = generateCourseOutline(topic, courseType, difficultyLevel);
+  const prompt = generateCourseOutlinePrompt(
+    topic,
+    courseType,
+    difficultyLevel
+  );
   const aiResponse = await sendMessage(courseOutlineAIModel, prompt);
   const aiResult = JSON.parse(aiResponse);
 
