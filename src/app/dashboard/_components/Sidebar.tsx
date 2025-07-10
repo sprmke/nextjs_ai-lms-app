@@ -62,14 +62,14 @@ function Sidebar() {
           </ul>
         </div>
       </div>
-      <div className="flex flex-col gap-y-1 border p-3 bg-slate-100 rounded-lg">
+      <Link
+        href="/dashboard/upgrade"
+        className="flex flex-col gap-y-1 border p-3 bg-slate-100 rounded-lg"
+      >
         <p className="text-lg">Available credits : 5</p>
-        <Progress value={50} />
+        <Progress value={50} color="primary" />
         <p className="text-sm ">1 out of 5 credits used</p>
-        <Link href="/dashboard/upgrade" className="text-primary text-xs">
-          Upgrade to create more
-        </Link>
-      </div>
+      </Link>
     </div>
   );
 }
