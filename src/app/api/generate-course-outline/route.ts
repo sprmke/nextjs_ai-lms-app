@@ -1,3 +1,4 @@
+import { generateCourseOutline } from '@/app/config/aiInstructions';
 import { courseOutlineAIModel, sendMessage } from '@/app/config/aiModel';
 import { db } from '@/app/config/db';
 import { STUDY_MATERIALS_TABLE } from '@/app/config/schema';
@@ -8,7 +9,7 @@ export async function POST(req: NextRequest) {
     await req.json();
 
   // Generate course outline using AI
-  const prompt = `Generate a study material for ${topic} for ${courseType} and level of difficulty will be ${difficultyLevel} with summary of crouse, list of chapters along with summary of each chapter, topic list in each chapter, all result in JSON format`;
+  const prompt = generateCourseOutline(topic, courseType, difficultyLevel);
   const aiResponse = await sendMessage(courseOutlineAIModel, prompt);
   const aiResult = JSON.parse(aiResponse);
 

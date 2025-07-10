@@ -299,3 +299,11 @@ This systematic approach ensures all requirements are met, the difficulty level 
     ],
   },
 ];
+
+export const generateCourseOutline = (
+  topic: string,
+  courseType: string,
+  difficultyLevel: string
+) => {
+  return `Generate a study material for ${topic} for ${courseType} and level of difficulty will be ${difficultyLevel} with summary of crouse, list of chapters along with summary of each chapter, topic list in each chapter, all result in JSON format`;
+};
