@@ -45,19 +45,21 @@ function Sidebar() {
           <Link href="/create">
             <Button className="w-full">+ Create New</Button>
           </Link>
-          <div className="flex flex-col gap-y-3">
+          <ul className="flex flex-col gap-y-3">
             {menuList.map((menu, index) => (
-              <div
+              <li
                 key={index}
-                className={`flex gap-5 items-center p-3 hover:bg-slate-200 rounded-lg cursor-pointer ${
+                className={`flex gap-5 items-center hover:bg-slate-200 transition-colors duration-300 ease-in-out rounded-lg cursor-pointer ${
                   pathname === menu.path && 'bg-slate-200'
                 }`}
               >
-                <menu.icon />
-                <p>{menu.name}</p>
-              </div>
+                <Link href={menu.path} className="flex w-full p-3 gap-x-3">
+                  <menu.icon />
+                  <p>{menu.name}</p>
+                </Link>
+              </li>
             ))}
-          </div>
+          </ul>
         </div>
       </div>
       <div className="flex flex-col gap-y-1 border p-3 bg-slate-100 rounded-lg">
