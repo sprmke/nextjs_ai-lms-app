@@ -211,6 +211,30 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* Stats Section */}
+      <section className="px-6 py-20 bg-gradient-to-r from-blue-600 to-purple-600">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid md:grid-cols-4 gap-8 text-center">
+            <div>
+              <div className="text-4xl font-bold text-white mb-2">10K+</div>
+              <div className="text-blue-100">Active Learners</div>
+            </div>
+            <div>
+              <div className="text-4xl font-bold text-white mb-2">500+</div>
+              <div className="text-blue-100">Courses Created</div>
+            </div>
+            <div>
+              <div className="text-4xl font-bold text-white mb-2">95%</div>
+              <div className="text-blue-100">Success Rate</div>
+            </div>
+            <div>
+              <div className="text-4xl font-bold text-white mb-2">24/7</div>
+              <div className="text-blue-100">AI Support</div>
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
   );
 }
