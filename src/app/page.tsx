@@ -267,6 +267,27 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* Footer */}
+      <footer className="px-6 py-12 bg-gray-900 text-white">
+        <div className="max-w-7xl mx-auto">
+          <div className="flex flex-col md:flex-row justify-between items-center">
+            <div className="flex items-center gap-2 mb-4 md:mb-0">
+              <Image
+                src="/logo.svg"
+                alt="AI LMS Logo"
+                width={32}
+                height={32}
+                className="bg-blue-100 p-1 rounded-lg"
+              />
+              <span className="text-lg font-bold">AI LMS</span>
+            </div>
+            <div className="text-gray-400 text-sm">
+              © 2024 AI LMS. All rights reserved.
+            </div>
+          </div>
+        </div>
+      </footer>
     </div>
   );
 }
