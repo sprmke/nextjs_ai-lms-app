@@ -68,6 +68,149 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* Features Section */}
+      <section className="px-6 py-20 bg-white">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-gray-900 mb-4">
+              Everything You Need to Succeed
+            </h2>
+            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+              Our AI-powered platform provides all the tools you need for
+              effective learning
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {/* Feature 1 */}
+            <div className="bg-gradient-to-br from-blue-50 to-indigo-50 p-8 rounded-2xl border border-blue-100">
+              <div className="w-12 h-12 bg-blue-500 rounded-lg flex items-center justify-center mb-6">
+                <Brain className="w-6 h-6 text-white" />
+              </div>
+              <h3 className="text-xl font-semibold text-gray-900 mb-4">
+                AI Course Generation
+              </h3>
+              <p className="text-gray-600 mb-6">
+                Generate personalized courses tailored to your learning style
+                and goals with our advanced AI.
+              </p>
+              <Image
+                src="/content.png"
+                alt="AI Course Generation"
+                width={200}
+                height={120}
+                className="rounded-lg"
+              />
+            </div>
+
+            {/* Feature 2 */}
+            <div className="bg-gradient-to-br from-green-50 to-emerald-50 p-8 rounded-2xl border border-green-100">
+              <div className="w-12 h-12 bg-green-500 rounded-lg flex items-center justify-center mb-6">
+                <Target className="w-6 h-6 text-white" />
+              </div>
+              <h3 className="text-xl font-semibold text-gray-900 mb-4">
+                Interactive Quizzes
+              </h3>
+              <p className="text-gray-600 mb-6">
+                Test your knowledge with adaptive quizzes that adjust to your
+                performance level.
+              </p>
+              <Image
+                src="/quiz.png"
+                alt="Interactive Quizzes"
+                width={200}
+                height={120}
+                className="rounded-lg"
+              />
+            </div>
+
+            {/* Feature 3 */}
+            <div className="bg-gradient-to-br from-purple-50 to-pink-50 p-8 rounded-2xl border border-purple-100">
+              <div className="w-12 h-12 bg-purple-500 rounded-lg flex items-center justify-center mb-6">
+                <BookOpen className="w-6 h-6 text-white" />
+              </div>
+              <h3 className="text-xl font-semibold text-gray-900 mb-4">
+                Smart Flashcards
+              </h3>
+              <p className="text-gray-600 mb-6">
+                Create and study with intelligent flashcards that help you
+                retain information better.
+              </p>
+              <Image
+                src="/flashcard.png"
+                alt="Smart Flashcards"
+                width={200}
+                height={120}
+                className="rounded-lg"
+              />
+            </div>
+
+            {/* Feature 4 */}
+            <div className="bg-gradient-to-br from-orange-50 to-red-50 p-8 rounded-2xl border border-orange-100">
+              <div className="w-12 h-12 bg-orange-500 rounded-lg flex items-center justify-center mb-6">
+                <Users className="w-6 h-6 text-white" />
+              </div>
+              <h3 className="text-xl font-semibold text-gray-900 mb-4">
+                Practice Sessions
+              </h3>
+              <p className="text-gray-600 mb-6">
+                Engage in focused practice sessions designed to reinforce your
+                learning.
+              </p>
+              <Image
+                src="/practice.png"
+                alt="Practice Sessions"
+                width={200}
+                height={120}
+                className="rounded-lg"
+              />
+            </div>
+
+            {/* Feature 5 */}
+            <div className="bg-gradient-to-br from-indigo-50 to-blue-50 p-8 rounded-2xl border border-indigo-100">
+              <div className="w-12 h-12 bg-indigo-500 rounded-lg flex items-center justify-center mb-6">
+                <CheckCircle className="w-6 h-6 text-white" />
+              </div>
+              <h3 className="text-xl font-semibold text-gray-900 mb-4">
+                Progress Tracking
+              </h3>
+              <p className="text-gray-600 mb-6">
+                Monitor your learning progress with detailed analytics and
+                insights.
+              </p>
+              <Image
+                src="/exam.png"
+                alt="Progress Tracking"
+                width={200}
+                height={120}
+                className="rounded-lg"
+              />
+            </div>
+
+            {/* Feature 6 */}
+            <div className="bg-gradient-to-br from-teal-50 to-cyan-50 p-8 rounded-2xl border border-teal-100">
+              <div className="w-12 h-12 bg-teal-500 rounded-lg flex items-center justify-center mb-6">
+                <Zap className="w-6 h-6 text-white" />
+              </div>
+              <h3 className="text-xl font-semibold text-gray-900 mb-4">
+                AI Q&A Support
+              </h3>
+              <p className="text-gray-600 mb-6">
+                Get instant answers to your questions with our intelligent AI
+                assistant.
+              </p>
+              <Image
+                src="/qa.png"
+                alt="AI Q&A Support"
+                width={200}
+                height={120}
+                className="rounded-lg"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
   );
 }
