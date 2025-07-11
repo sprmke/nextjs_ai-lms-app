@@ -235,6 +235,38 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* CTA Section */}
+      <section className="px-6 py-20 bg-white">
+        <div className="max-w-4xl mx-auto text-center">
+          <h2 className="text-4xl font-bold text-gray-900 mb-6">
+            Ready to Transform Your Learning?
+          </h2>
+          <p className="text-xl text-gray-600 mb-8">
+            Join thousands of learners who are already achieving their goals
+            with AI-powered education.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <Link href="/sign-up">
+              <Button size="lg" className="text-lg px-8 py-6">
+                Start Your Free Trial
+                <ArrowRight className="ml-2 w-5 h-5" />
+              </Button>
+            </Link>
+            <div className="flex items-center gap-2 text-gray-600">
+              <div className="flex">
+                {[...Array(5)].map((_, i) => (
+                  <Star
+                    key={i}
+                    className="w-5 h-5 fill-yellow-400 text-yellow-400"
+                  />
+                ))}
+              </div>
+              <span className="text-sm">Trusted by 10,000+ learners</span>
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
   );
 }
