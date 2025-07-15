@@ -283,7 +283,7 @@ export default function Home() {
               <span className="text-lg font-bold">AI LMS</span>
             </div>
             <div className="text-gray-400 text-sm">
-              © 2024 AI LMS. All rights reserved.
+              © 2025 AI LMS. All rights reserved.
             </div>
           </div>
         </div>
