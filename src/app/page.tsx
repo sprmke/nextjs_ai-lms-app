@@ -55,7 +55,7 @@ export default function Home() {
             you succeed.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <Link href="/sign-up">
+            <Link href="/dashboard">
               <Button size="lg" className="text-lg px-8 py-6">
                 Start Learning Free
                 <ArrowRight className="ml-2 w-5 h-5" />
