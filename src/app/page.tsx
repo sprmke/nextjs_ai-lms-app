@@ -46,7 +46,7 @@ export default function Home() {
             AI-Powered Learning Platform
           </div>
           <h1 className="text-5xl md:text-7xl font-bold text-gray-900 mb-6 leading-tight">
-            Master Anything with
+            Master Any Subject with
             <span className="text-blue-600 block">AI-Powered Learning</span>
           </h1>
           <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
