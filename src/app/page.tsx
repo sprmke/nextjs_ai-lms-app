@@ -61,10 +61,12 @@ export default function Home() {
                 <ArrowRight className="ml-2 w-5 h-5" />
               </Button>
             </Link>
-            <Button variant="outline" size="lg" className="text-lg px-8 py-6">
-              <Play className="mr-2 w-5 h-5" />
-              Get Started
-            </Button>
+            <Link href="/dashboard">
+              <Button variant="outline" size="lg" className="text-lg px-8 py-6">
+                <Play className="mr-2 w-5 h-5" />
+                Get Started
+              </Button>
+            </Link>
           </div>
         </div>
       </section>
