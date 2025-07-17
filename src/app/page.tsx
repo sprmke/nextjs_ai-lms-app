@@ -1,5 +1,9 @@
+'use client';
+
 import Image from 'next/image';
 import Link from 'next/link';
+import { useUser } from '@clerk/nextjs';
+import { UserButton } from '@clerk/nextjs';
 import { Button } from '@/components/ui/button';
 import {
   BookOpen,
@@ -14,6 +18,8 @@ import {
 } from 'lucide-react';
 
 export default function Home() {
+  const { user, isLoaded } = useUser();
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50">
       {/* Navigation */}
@@ -29,12 +35,12 @@ export default function Home() {
           <span className="text-xl font-bold text-gray-900">AI LMS</span>
         </div>
         <div className="flex items-center gap-4">
-          <Link href="/sign-in">
-            <Button variant="ghost">Sign In</Button>
-          </Link>
-          <Link href="/dashboard">
-            <Button>Get Started</Button>
-          </Link>
+          {user && isLoaded && (
+            <div className="flex items-center gap-3">
+              <UserButton />
+            </div>
+          )}
+          {!user && <Link href="/sign-in">Sign In</Link>}
         </div>
       </nav>
 
