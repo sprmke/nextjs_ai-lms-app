@@ -40,7 +40,11 @@ export default function Home() {
               <UserButton />
             </div>
           )}
-          {!user && <Link href="/sign-in">Sign In</Link>}
+          {!user && isLoaded && (
+            <Link href="/sign-in">
+              <Button variant="outline">Sign In</Button>
+            </Link>
+          )}
         </div>
       </nav>
 
